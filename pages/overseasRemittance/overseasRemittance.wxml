@@ -1,0 +1,73 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <!-- <view class="weui-form__text-area">
+			<h2 class="weui-form__title">境外汇款申请书</h2>
+    </view> -->
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+
+            <mp-cells title="汇款人" >
+
+                <mp-cell prop="reCurrencycode" title="币种:" ext-class="">
+                    <picker bindchange="bindCurrencyChange" range="{{rc}}" range-key="dictLabel">
+                        <input wx:if="{{currencyIndex == -1}}" placeholder="请选择币种" disabled></input>
+                        <view wx:if="{{currencyIndex != -1}}">{{rc[currencyIndex].dictLabel}}</view>
+                    </picker>
+                </mp-cell>
+
+                <mp-cell show-error prop="reMoneyAmount" title="汇款金额:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="reMoneyAmount" class="weui-input" data-prop="reMoneyAmount" placeholder="请输入汇款金额"/>
+                </mp-cell>
+                <mp-cell show-error prop="reAccountno" title="汇款人账号:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="reAccountno" class="weui-input" data-prop="reAccountno" placeholder="请输入汇款人账号"/>
+                </mp-cell>
+                <mp-cell show-error prop="reName" title="汇款人名称:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="reName" class="weui-input" data-prop="reName" placeholder="请输入汇款人名称"/>
+                </mp-cell>
+                <mp-cell show-error prop="reAddress" title="汇款人地址:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="reAddress" class="weui-input" data-prop="reAddress" placeholder="请输入汇款人地址"/>
+                </mp-cell>
+
+                <mp-cell prop="reIdtypecode" title="汇款人证件类型:" ext-class="">
+                    <picker bindchange="bindIdTypeChange" range="{{it}}" range-key="dictLabel">
+                        <input wx:if="{{idTypeIndex == -1}}" placeholder="请选择汇款人证件类型" disabled></input>
+                        <view wx:if="{{idTypeIndex != -1}}">{{it[idTypeIndex].dictLabel}}</view>
+                    </picker>
+                </mp-cell>
+
+            </mp-cells>
+            <mp-cells title="收款人" >
+                <mp-cell show-error prop="coDepositbankNo" title="收款人开户银行在其代理行账号:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coDepositbankNo" class="weui-input" data-prop="coDepositbankNo" placeholder="请输入收款人开户银行在其代理行账号"/>
+                </mp-cell>
+                <mp-cell show-error prop="coDepositbankName" title="收款人开户银行名称:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coDepositbankName" class="weui-input" data-prop="coDepositbankName" placeholder="请输入收款人开户银行名称"/>
+                </mp-cell>
+                <mp-cell show-error prop="coDepositbankAddress" title="收款人开户银行地址:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coDepositbankAddress" class="weui-input" data-prop="coDepositbankAddress" placeholder="请输入收款人开户银行地址"/>
+                </mp-cell>
+                <mp-cell show-error prop="coAccountno" title="收款人账号:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coAccountno" class="weui-input" data-prop="coAccountno" placeholder="请输入收款人账号"/>
+                </mp-cell>
+                <mp-cell show-error prop="coName" title="收款人名称:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coName" class="weui-input" data-prop="coName" placeholder="请输入收款人名称"/>
+                </mp-cell>
+                <mp-cell show-error prop="coAddress" title="收款人地址:" ext-class="">
+                    <input bindinput="inputChangeHandle" data-field="coAddress" class="weui-input" data-prop="coAddress" placeholder="请输入收款人地址"/>
+                </mp-cell>
+                <mp-cell show-error prop="reRemark" title="汇款附言:" ext-class="">
+                    <!-- <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" /> -->
+                    <input bindinput="inputChangeHandle" data-field="reRemark" class="weui-input" data-prop="reRemark" placeholder="请输入汇款附言"/>
+                </mp-cell>
+               
+                
+            </mp-cells>
+           
+        </mp-form>
+
+        <view class="weui-btn-area">
+            <!-- <button class="weui-btn" type="primary" bindtap="dyHandle">打印</button> -->
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>

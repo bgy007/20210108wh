@@ -1,0 +1,29 @@
+{
+  "name": "overseasremittance",
+  "version": "1.0.0",
+  "description": "外汇",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgy007/20210107wh.git"
+  },
+  "keywords": [
+    "wh"
+  ],
+  "author": "bob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bgy007/20210107wh/issues"
+  },
+  "homepage": "https://github.com/bgy007/20210107wh#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.6"
+  },
+  "private": true,
+  "usingComponents": {
+    "mp-form": "weui-miniprogram/form/form"
+  }
+}
